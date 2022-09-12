@@ -22,8 +22,12 @@ class MainTabBarViewController: UITabBarController{
         vc2.tabBarItem.image = UIImage(systemName: "safari")
         vc3.tabBarItem.image = UIImage(systemName: "heart")
 
+        vc1.title = "Buscar"
+        vc2.title = "Explorar"
+        vc3.title = "Salvos"
         
         
+        tabBar.tintColor = .label
         
         setViewControllers([vc1, vc2, vc3], animated: true)
         
