@@ -12,8 +12,7 @@ class MainTabBarViewController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .cyan
-        
+                
         let vc1 = UINavigationController(rootViewController: BuscarViewController())
         let vc2 = UINavigationController(rootViewController: ExplorarViewController())
         let vc3 = UINavigationController(rootViewController: SalvosViewController())
@@ -33,22 +32,22 @@ class MainTabBarViewController: UITabBarController{
         
     }
     
+
     
 }
 
-//// MARK: - Preview
-//#if DEBUG
-//import SwiftUI
-//
-//@available(iOS 13, *)
-//struct View_Preview: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//           MainTabBarViewController().showPreview().previewDevice("iPhone 13")
-//           MainTabBarViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
-//            //Onboarding().showPreview().previewDevice("iPhone 13")
-//            //Onboarding().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
-//        }
-//    }
-//}
-//#endif
+// MARK: - Preview
+#if DEBUG
+import SwiftUI
+
+@available(iOS 13, *)
+struct View_Preview: PreviewProvider {
+    static var previews: some View {
+        Group {
+           MainTabBarViewController().showPreview().previewDevice("iPhone 13")
+           MainTabBarViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
+        
+        }
+    }
+}
+#endif
