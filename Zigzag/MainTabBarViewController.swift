@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainTabBarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +27,8 @@ import SwiftUI
 struct View_Preview: PreviewProvider {
     static var previews: some View {
         Group {
-            ViewController().showPreview().previewDevice("iPhone 13")
-            ViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
+            MainTabBarViewController().showPreview().previewDevice("iPhone 13")
+            MainTabBarViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
         }
     }
 }
