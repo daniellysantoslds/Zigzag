@@ -13,6 +13,20 @@ class MainTabBarViewController: UITabBarController{
         super.viewDidLoad()
         
         view.backgroundColor = .cyan
+        
+        let vc1 = UINavigationController(rootViewController: BuscarViewController())
+        let vc2 = UINavigationController(rootViewController: ExplorarViewController())
+        let vc3 = UINavigationController(rootViewController: SalvosViewController())
+        
+        vc1.tabBarItem.image = UIImage(systemName: "magnifyingglass")
+        vc2.tabBarItem.image = UIImage(systemName: "safari")
+        vc3.tabBarItem.image = UIImage(systemName: "heart")
+
+        
+        
+        
+        setViewControllers([vc1, vc2, vc3], animated: true)
+        
     }
     
     
