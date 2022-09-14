@@ -28,33 +28,27 @@ class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: customCollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         view.addSubview(collectionView)
         collectionView.frame = view.bounds
+        
+        
+        
 
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemBlue
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.contentView.backgroundColor = .systemBlue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCollectionViewCell.identifier, for: indexPath)
+       // cell.contentView.backgroundColor = .systemBlue
         return cell
     }
     
