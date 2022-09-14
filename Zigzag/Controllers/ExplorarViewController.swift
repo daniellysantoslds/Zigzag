@@ -12,8 +12,8 @@ class ExplorarViewController: UIViewController {
     
     private let explorarFeedTable: UITableView  =  {
         
-        let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        let table = UITableView(frame: .zero, style: .grouped)
+        table.register(ExplorarCollectionViewTableViewCell.self, forCellReuseIdentifier: ExplorarCollectionViewTableViewCell.identifier)
         return table
         
     }()
@@ -45,14 +45,27 @@ class ExplorarViewController: UIViewController {
 }
 
 extension  ExplorarViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+   
+    //numero de sessoes
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
     
+    //numero de celulas
+    func tableView(_ tableview: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "zigzag"
-        cell.backgroundColor = .red
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ExplorarCollectionViewTableViewCell.identifier, for: indexPath) as? ExplorarCollectionViewTableViewCell else {
+            return UITableViewCell()
+        }
+        
         return cell
     }
     
@@ -65,3 +78,20 @@ extension  ExplorarViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+
+
+
+// MARK: - Preview
+#if DEBUG
+import SwiftUI
+
+@available(iOS 13, *)
+struct ExplorarViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        Group {
+            ExplorarViewController().showPreview().previewDevice("iPhone 13")
+            ExplorarViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
+        }
+    }
+}
+#endif
