@@ -47,13 +47,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		931CC26528D150CB006A7AA7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		932CB72128CB856700E2D8F8 = {
 			isa = PBXGroup;
 			children = (
@@ -73,7 +66,6 @@
 		932CB72C28CB856700E2D8F8 /* Zigzag */ = {
 			isa = PBXGroup;
 			children = (
-				931CC26528D150CB006A7AA7 /* Views */,
 				932CB72D28CB856700E2D8F8 /* AppDelegate.swift */,
 				932CB72F28CB856700E2D8F8 /* SceneDelegate.swift */,
 				936F7DAB28CF61B0000445E2 /* Controllers */,
