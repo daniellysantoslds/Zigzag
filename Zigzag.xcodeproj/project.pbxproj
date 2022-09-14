@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		931CC26728D15105006A7AA7 /* ExplorarCollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931CC26628D15105006A7AA7 /* ExplorarCollectionViewTableViewCell.swift */; };
 		932CB72E28CB856700E2D8F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932CB72D28CB856700E2D8F8 /* AppDelegate.swift */; };
 		932CB73028CB856700E2D8F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932CB72F28CB856700E2D8F8 /* SceneDelegate.swift */; };
 		932CB73228CB856700E2D8F8 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 932CB73128CB856700E2D8F8 /* MainTabBarViewController.swift */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		931CC26628D15105006A7AA7 /* ExplorarCollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorarCollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		932CB72A28CB856700E2D8F8 /* Zigzag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zigzag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		932CB72D28CB856700E2D8F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		932CB72F28CB856700E2D8F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,7 +50,6 @@
 		931CC26528D150CB006A7AA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				931CC26628D15105006A7AA7 /* ExplorarCollectionViewTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,7 +169,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				936F7DAD28CF6239000445E2 /* BuscarViewController.swift in Sources */,
-				931CC26728D15105006A7AA7 /* ExplorarCollectionViewTableViewCell.swift in Sources */,
 				932CB73228CB856700E2D8F8 /* MainTabBarViewController.swift in Sources */,
 				936F7DA828CF546B000445E2 /* UIView+Preview.swift in Sources */,
 				93A3158328D0AFC800145AC8 /* ViewController.swift in Sources */,
