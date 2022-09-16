@@ -18,6 +18,9 @@ class SalvosViewController: UIViewController, UICollectionViewDelegate, UICollec
         //collection view layout
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: view.frame.size.width-view.frame.size.width/20, height: view.frame.size.width/1.5)
+        layout.minimumLineSpacing = 16
+        layout.minimumInteritemSpacing = 16
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
@@ -27,7 +30,7 @@ class SalvosViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(SalvosCollectionViewCell.self, forCellWithReuseIdentifier: SalvosCollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         view.addSubview(collectionView)
@@ -52,8 +55,7 @@ class SalvosViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.contentView.backgroundColor = .systemBlue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SalvosCollectionViewCell.identifier, for: indexPath)
         return cell
     }
     
