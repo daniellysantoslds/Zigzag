@@ -10,48 +10,42 @@ import UIKit
 // acrescentei UICollectionViewDelegate e UICollectionViewDataSource
 class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    //collection view
-    private var collectionView: UICollectionView?
+    public let myView = BuscarView()
+    
+    private var myConstraints: [NSLayoutConstraint] = []
+    
+    override func loadView() {
+        super.loadView()
+        self.view = myView // A view do viewcontroller é essa
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //collection view layout
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
-        //desembrulhando (unwrap) a collection view pq o valor tava opcional
-        guard let collectionView = collectionView else {
-            return
-        }
-        
-        
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: customCollectionViewCell.identifier)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        view.addSubview(collectionView)
-        collectionView.frame = view.bounds
-        
-        
-        
+       }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.myView.typeCollectionView.dataSource = self
+        self.myView.typeCollectionView.delegate = self
 
-        view.backgroundColor = .systemBlue
     }
     
-
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
     
+   
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: customCollectionViewCell.identifier, for: indexPath)
-       // cell.contentView.backgroundColor = .systemBlue
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeCollectionViewCell.identifier, for: indexPath)
+        //cell.contentView.backgroundColor = .systemBlue
+        
         return cell
     }
     
     
-    
 }
+    
+
