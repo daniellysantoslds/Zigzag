@@ -36,7 +36,7 @@ class BuscarView: UIView {
     
     init() {
         super.init(frame: .zero)
-        self.backgroundColor = .red
+        self.backgroundColor = .systemBackground //AQUI A COR DO FUNDO
         self.setupViews()
         self.registerCell()
         self.setupCollectionFlow()
