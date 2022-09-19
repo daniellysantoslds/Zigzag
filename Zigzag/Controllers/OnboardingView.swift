@@ -9,7 +9,6 @@ import UIKit
 class OnboardingView: UIView {
     
     
-    
     // MARK: - inicializar as views
     let backgroundView = UIImageView()
     let backgroundLinearView = UIImageView()
@@ -61,12 +60,19 @@ class OnboardingView: UIView {
         backgroundView.image = UIImage(named: "bg-onboarding")
         backgroundView.contentMode = .scaleAspectFill
         
+//        backgroundLinearView.image = UIImage(named: "bg-linear")
+//        backgroundLinearView.contentMode = .scaleAspectFill
+        
+        
+        
         tituloLabel.text = "Boas vindas"
         tituloLabel.font = UIFont.boldSystemFont(ofSize: 28)
         tituloLabel.textColor = .white
         
         
         descriçãoLabel.text = "O zigzag é um app onde você"
+        descriçãoLabel.font = UIFont.boldSystemFont(ofSize: 17)
+        descriçãoLabel.textColor = .white
         
         
         comecarButton.setTitle("Começar", for: .normal)
@@ -94,13 +100,13 @@ class OnboardingView: UIView {
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
-        backgroundLinearView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            backgroundLinearView.topAnchor.constraint(equalTo: topAnchor),
-            backgroundLinearView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            backgroundLinearView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            backgroundLinearView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+//        backgroundLinearView.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            backgroundLinearView.topAnchor.constraint(equalTo: topAnchor),
+//            backgroundLinearView.trailingAnchor.constraint(equalTo: trailingAnchor),
+//            backgroundLinearView.leadingAnchor.constraint(equalTo: leadingAnchor),
+//            backgroundLinearView.bottomAnchor.constraint(equalTo: bottomAnchor)
+//        ])
         
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
