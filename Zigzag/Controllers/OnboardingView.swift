@@ -31,6 +31,7 @@ class OnboardingView: UIView {
         setupViewsHierarqchy()
         setupViewsAttributes()
         setupConstraints()
+        setupAdditionalConfiguration()
     }
     
     required init?(coder: NSCoder) {
@@ -61,13 +62,18 @@ class OnboardingView: UIView {
         backgroundView.contentMode = .scaleAspectFill
         
         tituloLabel.text = "Boas vindas"
+        tituloLabel.font = UIFont.boldSystemFont(ofSize: 28)
+        tituloLabel.textColor = .white
+        
         
         descriçãoLabel.text = "O zigzag é um app onde você"
         
         
         comecarButton.setTitle("Começar", for: .normal)
+        // como quebro a linha
         comecarButton.setTitleColor(.label, for: .normal)
-        comecarButton.tintColor = .systemOrange
+        //        label.font = UIFont.boldSystemFont(ofSize: 40)
+        comecarButton.tintColor = UIColor(named: "Green30")
         
         stackView.axis = .vertical
         stackView.alignment = .fill
@@ -87,6 +93,15 @@ class OnboardingView: UIView {
             backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+        
+        backgroundLinearView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            backgroundLinearView.topAnchor.constraint(equalTo: topAnchor),
+            backgroundLinearView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            backgroundLinearView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            backgroundLinearView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -120,21 +135,24 @@ class OnboardingView: UIView {
             comecarButton.leadingAnchor.constraint(equalTo: comecarButtonContainer.leadingAnchor, constant: 40),
             comecarButton.heightAnchor.constraint(equalToConstant: 44)
             
-            
         ])
         
     }
     
-    
     func setupAdditionalConfiguration() {
-        // MARK: - Outras configurações
-        comecarButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
-    }
-    
-    @objc func tappedButton(sender: UIButton) {
-        print("tocou botão")
+        func setupAdditionalConfiguration() {
+            //            // MARK: - Outras configurações
+            //            comecarButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+            //        }
+            
+            //        @objc func tappedButton(sender: UIButton) {
+            //            print("tocou botão")
+            //            // precisa do delegate?
+            //
+        }
         
     }
+    
     
 }
 
