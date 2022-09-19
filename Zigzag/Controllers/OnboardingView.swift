@@ -7,22 +7,22 @@
 import UIKit
 
 class OnboardingView: UIView {
-
-   
-
-        // MARK: - inicializar as views
-        let backgroundView = UIImageView()
-        let backgroundLinearView = UIImageView()
-        let tituloLabel = UILabel()
-        let descriçãoLabel = UILabel()
-        let comecarButton = UIButton(configuration: .filled())
-
-
-        let tituloLabelContainer = UIView()
-        let descriçãoLabelContainer = UIView()
-        let comecarButtonContainer = UIView()
-
-        let stackView = UIStackView()
+    
+    
+    
+    // MARK: - inicializar as views
+    let backgroundView = UIImageView()
+    let backgroundLinearView = UIImageView()
+    let tituloLabel = UILabel()
+    let descriçãoLabel = UILabel()
+    let comecarButton = UIButton(configuration: .filled())
+    
+    
+    let tituloLabelContainer = UIView()
+    let descriçãoLabelContainer = UIView()
+    let comecarButtonContainer = UIView()
+    
+    let stackView = UIStackView()
     
     
     
@@ -37,8 +37,8 @@ class OnboardingView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-
-        // MARK: - Setup na hierarquia das views
+    
+    // MARK: - Setup na hierarquia das views
     private func setupViewsHierarqchy() {
         addSubview(backgroundView)
         addSubview(backgroundLinearView)
@@ -47,36 +47,36 @@ class OnboardingView: UIView {
         tituloLabelContainer.addSubview(tituloLabel)
         descriçãoLabelContainer.addSubview(descriçãoLabel)
         comecarButtonContainer.addSubview(comecarButton)
-
+        
         stackView.addArrangedSubview(tituloLabelContainer)
         stackView.addArrangedSubview(descriçãoLabelContainer)
         stackView.addArrangedSubview(comecarButtonContainer)
         
     }
-       
+    
     private func setupViewsAttributes() {
         
         // MARK: - Conf dos atributos dessas vies
         backgroundView.image = UIImage(named: "bg-onboarding")
         backgroundView.contentMode = .scaleAspectFill
-
-        tituloLabel.text = "oii"
-
-        descriçãoLabel.text = "oii"
-
-
+        
+        tituloLabel.text = "Boas vindas"
+        
+        descriçãoLabel.text = "O zigzag é um app onde você"
+        
+        
         comecarButton.setTitle("Começar", for: .normal)
         comecarButton.setTitleColor(.label, for: .normal)
         comecarButton.tintColor = .systemOrange
-
+        
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
         stackView.spacing = 32
-
+        
     }
-
-
+    
+    
     func setupConstraints() {
         // MARK: - Conf das constrainsts e autolayout
         
@@ -87,7 +87,7 @@ class OnboardingView: UIView {
             backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-
+        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
@@ -95,21 +95,21 @@ class OnboardingView: UIView {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-
+        
         tituloLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tituloLabel.topAnchor.constraint(equalTo: tituloLabelContainer.topAnchor, constant: 44),
-            tituloLabel.trailingAnchor.constraint(equalTo: tituloLabelContainer.trailingAnchor),
-            tituloLabel.leadingAnchor.constraint(equalTo: tituloLabelContainer.leadingAnchor),
+            tituloLabel.trailingAnchor.constraint(equalTo: tituloLabelContainer.trailingAnchor, constant: -46),
+            tituloLabel.leadingAnchor.constraint(equalTo: tituloLabelContainer.leadingAnchor, constant: 46),
             tituloLabel.bottomAnchor.constraint(equalTo: tituloLabelContainer.bottomAnchor)
         ])
-
+        
         descriçãoLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             descriçãoLabel.topAnchor.constraint(equalTo: descriçãoLabelContainer.topAnchor),
-            descriçãoLabel.trailingAnchor.constraint(equalTo: descriçãoLabelContainer.trailingAnchor),
-            descriçãoLabel.leadingAnchor.constraint(equalTo: descriçãoLabelContainer.leadingAnchor),
-            descriçãoLabel.bottomAnchor.constraint(equalTo: descriçãoLabelContainer.bottomAnchor)
+            descriçãoLabel.trailingAnchor.constraint(equalTo: descriçãoLabelContainer.trailingAnchor, constant: -46),
+            descriçãoLabel.leadingAnchor.constraint(equalTo: descriçãoLabelContainer.leadingAnchor, constant: 46),
+            descriçãoLabel.bottomAnchor.constraint(equalTo: tituloLabelContainer.bottomAnchor, constant: 50)
         ])
         
         comecarButton.translatesAutoresizingMaskIntoConstraints = false
@@ -119,25 +119,23 @@ class OnboardingView: UIView {
             comecarButton.trailingAnchor.constraint(equalTo: comecarButton.trailingAnchor, constant: -40),
             comecarButton.leadingAnchor.constraint(equalTo: comecarButtonContainer.leadingAnchor, constant: 40),
             comecarButton.heightAnchor.constraint(equalToConstant: 44)
-        
-        
+            
+            
         ])
-
+        
     }
-       
-       
-
-
-func setupAdditionalConfiguration() {
-    // MARK: - Outras configurações
-  comecarButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
-}
-
-@objc func tappedButton(sender: UIButton) {
-    print("tocou botão")
-   
-}
-
+    
+    
+    func setupAdditionalConfiguration() {
+        // MARK: - Outras configurações
+        comecarButton.addTarget(self, action: #selector(tappedButton), for: .touchUpInside)
+    }
+    
+    @objc func tappedButton(sender: UIButton) {
+        print("tocou botão")
+        
+    }
+    
 }
 
 // MARK: - Preview
@@ -148,9 +146,9 @@ import SwiftUI
 struct OnboardingView_Preview: PreviewProvider {
     static var previews: some View {
         Group {
-           OnboardingView().showPreview().previewDevice("iPhone 13")
-           OnboardingView().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
-
+            OnboardingView().showPreview().previewDevice("iPhone 13")
+            OnboardingView().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
+            
         }
     }
 }
