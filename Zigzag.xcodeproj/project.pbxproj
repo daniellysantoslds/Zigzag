@@ -18,7 +18,6 @@
 		936F7DAD28CF6239000445E2 /* BuscarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DAC28CF6239000445E2 /* BuscarViewController.swift */; };
 		936F7DAF28CF627C000445E2 /* ExplorarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DAE28CF627C000445E2 /* ExplorarViewController.swift */; };
 		936F7DB128CF6287000445E2 /* SalvosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DB028CF6287000445E2 /* SalvosViewController.swift */; };
-		93B7BE9328D6087F0046AAFC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B7BE9228D6087F0046AAFC /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		936F7DAC28CF6239000445E2 /* BuscarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarViewController.swift; sourceTree = "<group>"; };
 		936F7DAE28CF627C000445E2 /* ExplorarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorarViewController.swift; sourceTree = "<group>"; };
 		936F7DB028CF6287000445E2 /* SalvosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalvosViewController.swift; sourceTree = "<group>"; };
-		93B7BE9228D6087F0046AAFC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +83,6 @@
 			children = (
 				932CB73128CB856700E2D8F8 /* MainTabBarViewController.swift */,
 				933AE90C28CFA0360082AB2F /* OnboardingViewController.swift */,
-				93B7BE9228D6087F0046AAFC /* OnboardingView.swift */,
 				936F7DAC28CF6239000445E2 /* BuscarViewController.swift */,
 				936F7DAE28CF627C000445E2 /* ExplorarViewController.swift */,
 				936F7DB028CF6287000445E2 /* SalvosViewController.swift */,
@@ -166,7 +163,6 @@
 				936F7DAD28CF6239000445E2 /* BuscarViewController.swift in Sources */,
 				932CB73228CB856700E2D8F8 /* MainTabBarViewController.swift in Sources */,
 				936F7DA828CF546B000445E2 /* UIView+Preview.swift in Sources */,
-				93B7BE9328D6087F0046AAFC /* OnboardingView.swift in Sources */,
 				936F7DAA28CF5473000445E2 /* UIViewController+Preview.swift in Sources */,
 				936F7DB128CF6287000445E2 /* SalvosViewController.swift in Sources */,
 				936F7DAF28CF627C000445E2 /* ExplorarViewController.swift in Sources */,
