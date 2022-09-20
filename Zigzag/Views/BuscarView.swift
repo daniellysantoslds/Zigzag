@@ -31,8 +31,52 @@ class BuscarView: UIView {
         return collection
     }()
 
+    private let title1: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "O que você procura?"
+        label.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        label.numberOfLines = 2
+        label.textAlignment = .left
+        label.clipsToBounds = true
+        label.textColor = UIColor(named: "Gray40")
+        label.backgroundColor = .cyan
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
+    
+    private let title2: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Que idade(s) tem a(s) criança(s)??"
+        label.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        label.numberOfLines = 2
+        label.textAlignment = .left
+        label.clipsToBounds = true
+        label.textColor = UIColor(named: "Gray40")
+        label.backgroundColor = .cyan
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
+    
+    private let title3: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Que tipos de atividades interessam?"
+        label.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        label.numberOfLines = 2
+        label.textAlignment = .left
+        label.clipsToBounds = true
+        label.textColor = UIColor(named: "Gray40")
+        label.backgroundColor = .cyan
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        return label
+    }()
+    
     
     // Views
+    
+
     
     // Outros
     
@@ -95,6 +139,7 @@ class BuscarView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        
         self.setupUI()
         self.setupStaticTexts()
         self.setupDynamicConstraints()
@@ -110,6 +155,8 @@ class BuscarView: UIView {
         self.placeCollectionView.register(TypeCollectionViewCell.self, forCellWithReuseIdentifier: TypeCollectionViewCell.identifier)
         
     }
+    
+
     
     
     /// Define o layout da collection
@@ -128,10 +175,16 @@ class BuscarView: UIView {
         /*
          Aqui vão adicionar os elementos na tela (.addSubViews())
          */
-        
+       
+        self.addSubview(title1)
         self.addSubview(typeCollectionView)
+        self.addSubview(title2)
         self.addSubview(ageCollectionView)
+        self.addSubview(title3)
         self.addSubview(placeCollectionView)
+      
+    
+        
 
 
         
@@ -181,25 +234,39 @@ class BuscarView: UIView {
         NSLayoutConstraint.deactivate(self.dynamicConstraints)
         
         self.dynamicConstraints = [
-            self.typeCollectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 40),
+            self.title1.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 44),
+            self.title1.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            self.title1.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            self.title1.heightAnchor.constraint(equalToConstant: 24),
+            
+            self.typeCollectionView.topAnchor.constraint(equalTo: title1.bottomAnchor, constant: 24),
             self.typeCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             self.typeCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             self.typeCollectionView.heightAnchor.constraint(equalToConstant: 97),
             
-            self.ageCollectionView.topAnchor.constraint(equalTo: typeCollectionView.bottomAnchor, constant: 36),
+            self.title2.topAnchor.constraint(equalTo: typeCollectionView.bottomAnchor, constant: 36),
+            self.title2.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            self.title2.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            self.title2.heightAnchor.constraint(equalToConstant: 24),
+            
+            self.ageCollectionView.topAnchor.constraint(equalTo: title2.bottomAnchor, constant: 24),
             self.ageCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             self.ageCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             self.ageCollectionView.heightAnchor.constraint(equalToConstant: 97),
             
-            self.placeCollectionView.topAnchor.constraint(equalTo: ageCollectionView.bottomAnchor, constant: 36),
+            self.title3.topAnchor.constraint(equalTo: ageCollectionView.bottomAnchor, constant: 36),
+            self.title3.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            self.title3.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            self.title3.heightAnchor.constraint(equalToConstant: 24),
+            
+            self.placeCollectionView.topAnchor.constraint(equalTo: title3.bottomAnchor, constant: 36),
             self.placeCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             self.placeCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             self.placeCollectionView.heightAnchor.constraint(equalToConstant: 97),
-
-
-
+            
             
         ]
+        
         
         NSLayoutConstraint.activate(self.dynamicConstraints)
     }

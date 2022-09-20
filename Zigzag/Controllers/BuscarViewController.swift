@@ -38,6 +38,8 @@ class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.myView.placeCollectionView.dataSource = self
         self.myView.placeCollectionView.delegate = self
         
+    
+        
         
         
         
