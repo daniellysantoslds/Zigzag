@@ -8,9 +8,11 @@
 import UIKit
 
 // acrescentei UICollectionViewDelegate e UICollectionViewDataSource
-class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
+    
     
     public let myView = BuscarView()
+    
     
     private var myConstraints: [NSLayoutConstraint] = []
     
@@ -21,17 +23,34 @@ class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
        }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.myView.typeCollectionView.dataSource = self
         self.myView.typeCollectionView.delegate = self
+        
+        self.myView.ageCollectionView.dataSource = self
+        self.myView.ageCollectionView.delegate = self
+        
+        self.myView.placeCollectionView.dataSource = self
+        self.myView.placeCollectionView.delegate = self
+        
+        
+        
+        
+        
+    
 
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+    
+
     
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

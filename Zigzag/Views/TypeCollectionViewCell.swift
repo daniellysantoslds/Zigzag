@@ -45,3 +45,5 @@ class TypeCollectionViewCell: UICollectionViewCell {
         imageview.image = nil
     }
 }
+
+
