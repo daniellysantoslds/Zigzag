@@ -24,7 +24,6 @@ class OnboardingView: UIView {
     let stackView = UIStackView()
     
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewsHierarqchy()
@@ -77,9 +76,10 @@ class OnboardingView: UIView {
         
         comecarButton.setTitle("Começar", for: .normal)
         // como quebro a linha
-        comecarButton.setTitleColor(.label, for: .normal)
+        comecarButton.setTitleColor(.white, for: .normal)
         //        label.font = UIFont.boldSystemFont(ofSize: 40)
         comecarButton.tintColor = UIColor(named: "Green30")
+        
         
         stackView.axis = .vertical
         stackView.alignment = .fill

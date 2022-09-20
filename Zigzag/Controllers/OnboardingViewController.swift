@@ -9,16 +9,13 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // view.backgroundColor = .cyan
-        
+
+        view.backgroundColor = .cyan
     }
     
-    override func loadView() {
-        let view = UIView()
-        
-        
-    }
+    
 }
+
