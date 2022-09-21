@@ -20,6 +20,8 @@
 		936F7DAD28CF6239000445E2 /* BuscarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DAC28CF6239000445E2 /* BuscarViewController.swift */; };
 		936F7DAF28CF627C000445E2 /* ExplorarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DAE28CF627C000445E2 /* ExplorarViewController.swift */; };
 		936F7DB128CF6287000445E2 /* SalvosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DB028CF6287000445E2 /* SalvosViewController.swift */; };
+		9383762228DB36FB0030F2F6 /* ComerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9383762128DB36FB0030F2F6 /* ComerCollectionViewCell.swift */; };
+		9383762528DB49800030F2F6 /* SessaoExplorarComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9383762428DB49800030F2F6 /* SessaoExplorarComponente.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		936F7DAC28CF6239000445E2 /* BuscarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarViewController.swift; sourceTree = "<group>"; };
 		936F7DAE28CF627C000445E2 /* ExplorarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorarViewController.swift; sourceTree = "<group>"; };
 		936F7DB028CF6287000445E2 /* SalvosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalvosViewController.swift; sourceTree = "<group>"; };
+		9383762128DB36FB0030F2F6 /* ComerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComerCollectionViewCell.swift; sourceTree = "<group>"; };
+		9383762428DB49800030F2F6 /* SessaoExplorarComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessaoExplorarComponente.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 		932CB72C28CB856700E2D8F8 /* Zigzag */ = {
 			isa = PBXGroup;
 			children = (
+				9383762328DB492B0030F2F6 /* Components */,
+				9383762028DB36810030F2F6 /* Cells */,
 				932CB72D28CB856700E2D8F8 /* AppDelegate.swift */,
 				932CB72F28CB856700E2D8F8 /* SceneDelegate.swift */,
 				9356EEC228DA9B5C00032BF6 /* Views */,
@@ -102,6 +108,22 @@
 				936F7DB028CF6287000445E2 /* SalvosViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9383762028DB36810030F2F6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9383762128DB36FB0030F2F6 /* ComerCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9383762328DB492B0030F2F6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9383762428DB49800030F2F6 /* SessaoExplorarComponente.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,12 +201,14 @@
 				932CB73228CB856700E2D8F8 /* MainTabBarViewController.swift in Sources */,
 				936F7DA828CF546B000445E2 /* UIView+Preview.swift in Sources */,
 				936C042228D8968D004851B8 /* OnboardingView.swift in Sources */,
+				9383762528DB49800030F2F6 /* SessaoExplorarComponente.swift in Sources */,
 				936F7DAA28CF5473000445E2 /* UIViewController+Preview.swift in Sources */,
 				936F7DB128CF6287000445E2 /* SalvosViewController.swift in Sources */,
 				936F7DAF28CF627C000445E2 /* ExplorarViewController.swift in Sources */,
 				932CB72E28CB856700E2D8F8 /* AppDelegate.swift in Sources */,
 				933AE90D28CFA0360082AB2F /* OnboardingViewController.swift in Sources */,
 				932CB73028CB856700E2D8F8 /* SceneDelegate.swift in Sources */,
+				9383762228DB36FB0030F2F6 /* ComerCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
