@@ -6,31 +6,37 @@ class BuscarView: UIView {
     
     public let typeCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 103.67, height: 93)
+        layout.minimumLineSpacing = 16
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.backgroundColor = .yellow
         
         return collection
     }()
     
     public let ageCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 94, height: 44)
+        layout.minimumLineSpacing = 8
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.backgroundColor = .yellow
         
         return collection
     }()
     
     public let placeCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 94, height: 44)
+        layout.minimumLineSpacing = 8
+        layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.backgroundColor = .yellow
         
         return collection
     }()
-
+    
     private let title1: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -40,8 +46,7 @@ class BuscarView: UIView {
         label.textAlignment = .left
         label.clipsToBounds = true
         label.textColor = UIColor(named: "Gray40")
-        label.backgroundColor = .cyan
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
@@ -54,8 +59,7 @@ class BuscarView: UIView {
         label.textAlignment = .left
         label.clipsToBounds = true
         label.textColor = UIColor(named: "Gray40")
-        label.backgroundColor = .cyan
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
@@ -68,15 +72,29 @@ class BuscarView: UIView {
         label.textAlignment = .left
         label.clipsToBounds = true
         label.textColor = UIColor(named: "Gray40")
-        label.backgroundColor = .cyan
-        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
+    }()
+    
+    private let goButton: UIButton = {
+      let button = UIButton(configuration: .filled())
+      button.setTitle("Filtrar", for: .normal)
+      button.setTitleColor(.white, for: .normal)
+      button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
+      button.backgroundColor = .green
+      button.layer.cornerRadius = 12
+      button.layer.borderWidth = 2
+      button.layer.borderColor = UIColor.white.cgColor
+      button.addTarget(self, action: #selector(cancelActionButton), for: .touchUpInside)
+      button.translatesAutoresizingMaskIntoConstraints = false
+        
+      return button
     }()
     
     
     // Views
     
-
+    
     
     // Outros
     
@@ -84,29 +102,7 @@ class BuscarView: UIView {
     private var dynamicConstraints: [NSLayoutConstraint] = []
     
     /// Configurações do layout da collection
-    private let collectionFlow: UICollectionViewFlowLayout = {
-        let cvFlow = UICollectionViewFlowLayout()
-        cvFlow.scrollDirection = .horizontal
-     
-        
-        return cvFlow
-    }()
-    
-    private let secondCollectionFlow: UICollectionViewFlowLayout = {
-        let cvFlow = UICollectionViewFlowLayout()
-        cvFlow.scrollDirection = .horizontal
-     
-        
-        return cvFlow
-    }()
-    
-    private let thirdCollectionFlow: UICollectionViewFlowLayout = {
-        let cvFlow = UICollectionViewFlowLayout()
-        cvFlow.scrollDirection = .horizontal
-     
-        
-        return cvFlow
-    }()
+ 
     
     
     
@@ -115,9 +111,9 @@ class BuscarView: UIView {
     init() {
         super.init(frame: .zero)
         self.backgroundColor = .systemBackground //AQUI A COR DO FUNDO
-        self.setupViews()
         self.registerCell()
-        self.setupCollectionFlow()
+        self.setupViews()
+
     }
     required init?(coder: NSCoder) {fatalError("init(coder:) has not been implemented")}
     
@@ -151,21 +147,12 @@ class BuscarView: UIView {
     /// Registra as células nas collections/table
     private func registerCell() {
         self.typeCollectionView.register(TypeCollectionViewCell.self, forCellWithReuseIdentifier: TypeCollectionViewCell.identifier)
-        self.ageCollectionView.register(TypeCollectionViewCell.self, forCellWithReuseIdentifier: TypeCollectionViewCell.identifier)
-        self.placeCollectionView.register(TypeCollectionViewCell.self, forCellWithReuseIdentifier: TypeCollectionViewCell.identifier)
+        self.ageCollectionView.register(AgeCollectionViewCell.self, forCellWithReuseIdentifier: AgeCollectionViewCell.identifier)
+        self.placeCollectionView.register(AgeCollectionViewCell.self, forCellWithReuseIdentifier: AgeCollectionViewCell.identifier)
         
     }
     
-
     
-    
-    /// Define o layout da collection
-    private func setupCollectionFlow() {
-        self.typeCollectionView.collectionViewLayout = self.collectionFlow
-        self.ageCollectionView.collectionViewLayout = self.secondCollectionFlow
-        self.placeCollectionView.collectionViewLayout = self.thirdCollectionFlow
-
-    }
     
     
     /* Geral */
@@ -175,20 +162,17 @@ class BuscarView: UIView {
         /*
          Aqui vão adicionar os elementos na tela (.addSubViews())
          */
-       
+        
         self.addSubview(title1)
         self.addSubview(typeCollectionView)
         self.addSubview(title2)
         self.addSubview(ageCollectionView)
         self.addSubview(title3)
         self.addSubview(placeCollectionView)
-      
-    
-        
-
-
+        self.addSubview(goButton)
         
     }
+    
     
     /// Personalização da UI
     private func setupUI() {
@@ -197,16 +181,6 @@ class BuscarView: UIView {
          */
         // Define o tamanho que a célula vai ter
         // self.collectionFlow.itemSize = CGSize(width: 100, height: 100)
-        
-        self.collectionFlow.itemSize = CGSize(width: 103.67, height: 93)
-        self.collectionFlow.minimumLineSpacing = 32 //Foi só pra centralizar
-        
-        self.secondCollectionFlow.itemSize = CGSize(width: 94, height: 44)
-        self.secondCollectionFlow.minimumLineSpacing = 8
-        
-        self.thirdCollectionFlow.itemSize = CGSize(width: 94, height: 44)
-        self.thirdCollectionFlow.minimumLineSpacing = 8
-        
         
         // Define o tamanho que a célula vai ter
         // self.collectionFlow.itemSize = CGSize(width: 100, height: 100)
@@ -249,26 +223,35 @@ class BuscarView: UIView {
             self.title2.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             self.title2.heightAnchor.constraint(equalToConstant: 24),
             
-            self.ageCollectionView.topAnchor.constraint(equalTo: title2.bottomAnchor, constant: 24),
+            self.ageCollectionView.topAnchor.constraint(equalTo: title2.bottomAnchor, constant: 8),
             self.ageCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             self.ageCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             self.ageCollectionView.heightAnchor.constraint(equalToConstant: 97),
             
-            self.title3.topAnchor.constraint(equalTo: ageCollectionView.bottomAnchor, constant: 36),
+            self.title3.topAnchor.constraint(equalTo: ageCollectionView.bottomAnchor, constant: 8),
             self.title3.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             self.title3.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             self.title3.heightAnchor.constraint(equalToConstant: 24),
             
-            self.placeCollectionView.topAnchor.constraint(equalTo: title3.bottomAnchor, constant: 36),
+            self.placeCollectionView.topAnchor.constraint(equalTo: title3.bottomAnchor, constant: 8),
             self.placeCollectionView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             self.placeCollectionView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             self.placeCollectionView.heightAnchor.constraint(equalToConstant: 97),
+            
+            self.goButton.topAnchor.constraint(equalTo: placeCollectionView.bottomAnchor, constant: 88),
+            self.goButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 153),
+            self.goButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            self.goButton.heightAnchor.constraint(equalToConstant: 44),
             
             
         ]
         
         
         NSLayoutConstraint.activate(self.dynamicConstraints)
+    }
+    
+    @objc func cancelActionButton() {
+      //your code here when click
     }
 }
 

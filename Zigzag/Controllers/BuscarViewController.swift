@@ -13,6 +13,18 @@ class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     public let myView = BuscarView()
     
+    public let imagensType = [
+        UIImage(named: "Lazer-icon" ),
+        UIImage(named: "Hospedar-icon" ),
+        UIImage(named: "Comer-icon" ),
+    ]
+    
+    public let textoType = ["Lazer", "Hospedar", "Comer"]
+    public let textoAge = ["0-1 anos", "2-4 anos", "5-7 anos","8-15 anos","Para todos"]
+    public let textoPlace = ["Praia", "Piscina", "Parques","Ar livre","Recreação"]
+
+    
+    
     
     private var myConstraints: [NSLayoutConstraint] = []
     
@@ -38,13 +50,7 @@ class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.myView.placeCollectionView.dataSource = self
         self.myView.placeCollectionView.delegate = self
         
-    
-        
-        
-        
-        
-        
-    
+ 
 
     }
     
@@ -56,14 +62,33 @@ class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollec
     
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if collectionView == myView.typeCollectionView {
+            return textoType.count
+        } else if collectionView == myView.ageCollectionView {
+            return textoAge.count
+        } else {
+            return textoPlace.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeCollectionViewCell.identifier, for: indexPath)
-        //cell.contentView.backgroundColor = .systemBlue
         
-        return cell
+        if collectionView == myView.typeCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeCollectionViewCell.identifier, for: indexPath) as! TypeCollectionViewCell
+            let image = imagensType[indexPath.item] ?? UIImage()
+            cell.setup(image: image, texto: textoType[indexPath.item])
+            return cell
+        } else if collectionView == myView.ageCollectionView {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AgeCollectionViewCell.identifier, for: indexPath) as! AgeCollectionViewCell
+            cell.setupStaticTexts(title: textoAge[indexPath.item])
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AgeCollectionViewCell.identifier, for: indexPath) as! AgeCollectionViewCell
+            cell.setupStaticTexts(title: textoPlace[indexPath.item])
+            return cell
+        }
+
+    
     }
     
     

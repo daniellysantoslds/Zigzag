@@ -14,76 +14,30 @@ class AgeCollectionViewCell: UICollectionViewCell {
     /// Identificador da célula
     static let identifier = "AgeCollectionViewCell"
     
-    private let idade1: UILabel = {
+    private let borda: UIView = {
+        let borda = UIView()
+        borda.translatesAutoresizingMaskIntoConstraints = false
+        borda.layer.cornerRadius = 8
+        borda.layer.borderWidth = 1
+        borda.layer.borderColor = UIColor.lightGray.cgColor
+        
+        return borda
+    }()
+    
+    private let nome: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "0-2 anos?"
+        label.text = "0-2 anos"
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         label.numberOfLines = 2
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.clipsToBounds = true
         label.textColor = UIColor(named: "Gray40")
-        label.backgroundColor = .systemPink
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: 15)
         return label
     }()
     
-    private let idade2: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "0-4 anos?"
-        label.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        label.numberOfLines = 2
-        label.textAlignment = .left
-        label.clipsToBounds = true
-        label.textColor = UIColor(named: "Gray40")
-        label.backgroundColor = .systemPink
-        label.font = UIFont.boldSystemFont(ofSize: 15)
-        return label
-    }()
-    
-    private let idade3: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "0-6 anos?"
-        label.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        label.numberOfLines = 2
-        label.textAlignment = .left
-        label.clipsToBounds = true
-        label.textColor = UIColor(named: "Gray40")
-        label.backgroundColor = .systemPink
-        label.font = UIFont.boldSystemFont(ofSize: 15)
-        return label
-    }()
-    
-    private let idade4: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "5-14 anos?"
-        label.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        label.numberOfLines = 2
-        label.textAlignment = .left
-        label.clipsToBounds = true
-        label.textColor = UIColor(named: "Gray40")
-        label.backgroundColor = .systemPink
-        label.font = UIFont.boldSystemFont(ofSize: 15)
-        return label
-    }()
-    
-    private let idade5: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Todas as idades?"
-        label.setContentHuggingPriority(.defaultHigh, for: .vertical)
-        label.numberOfLines = 2
-        label.textAlignment = .left
-        label.clipsToBounds = true
-        label.textColor = UIColor(named: "Gray40")
-        label.backgroundColor = .systemPink
-        label.font = UIFont.boldSystemFont(ofSize: 15)
-        return label
-    }()
-    
+
     
     
     
@@ -98,28 +52,12 @@ class AgeCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         self.setupViews()
+        self.setupDynamicConstraints()
     }
     required init?(coder: NSCoder) {fatalError("init(coder:) has not been implemented")}
     
-    
-    
-    /* MARK: - Encapsulamento */
-    
-    
-    
-    /* MARK: - Ciclo de Vida */
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        self.setupStaticTexts()
-        self.setupDynamicConstraints()
-        self.setupUI()
-        
-        self.reloadInputViews()
-    }
+
     /* MARK: - Configurações */
     
     /// Adiciona os elementos (Views) na tela
@@ -128,29 +66,15 @@ class AgeCollectionViewCell: UICollectionViewCell {
          Aqui vão adicionar os elementos na tela (.addSubViews())
          */
         
-        contentView.addSubview(idade1)
-        contentView.addSubview(idade2)
-        contentView.addSubview(idade3)
-        contentView.addSubview(idade4)
-        contentView.addSubview(idade5)
+        contentView.addSubview(borda)
+        contentView.addSubview(nome)
         
+    
         
+    }
 
-        
-    }
-    
-    
-    /// Personalização da UI
-    private func setupUI() {
-        /*
-         Aqui vão definidos as bordas, cor de fundo da view
-         */
-        
-        // Define o tamanho que a célula vai ter
-        // self.collectionFlow.itemSize = CGSize(width: 100, height: 100)
-    }
     /// Define os textos que são estáticos (os textos em si que vão sempre ser o mesmo)
-    private func setupStaticTexts() {
+    func setupStaticTexts(title: String) {
         /*
          Aqui vão ser configurados os textos estáticos, ícones dos botões
          tamanho das fontes, peso das fontes.. (para botões e labels ou até
@@ -158,6 +82,8 @@ class AgeCollectionViewCell: UICollectionViewCell {
          */
         
         /* Labels */
+        
+        nome.text = title
         
         
         /* Botões */
@@ -169,30 +95,16 @@ class AgeCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.deactivate(self.dynamicConstraints)
         
         self.dynamicConstraints = [
-            self.idade1.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            self.idade1.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            self.idade1.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            self.idade1.heightAnchor.constraint(equalToConstant: 24),
+            self.borda.topAnchor.constraint(equalTo: contentView.topAnchor),
+            self.borda.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            self.borda.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            self.borda.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
-            self.idade2.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            self.idade2.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            self.idade2.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            self.idade2.heightAnchor.constraint(equalToConstant: 24),
+            self.nome.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
+            self.nome.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            self.nome.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            self.nome.heightAnchor.constraint(equalToConstant: 24),
             
-            self.idade3.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            self.idade3.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            self.idade3.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            self.idade3.heightAnchor.constraint(equalToConstant: 24),
-            
-            self.idade4.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            self.idade4.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            self.idade4.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            self.idade4.heightAnchor.constraint(equalToConstant: 24),
-            
-            self.idade5.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            self.idade5.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            self.idade5.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            self.idade5.heightAnchor.constraint(equalToConstant: 24),
             
             
         ]
@@ -200,3 +112,18 @@ class AgeCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate(self.dynamicConstraints)
     }
 }
+
+// MARK: - Preview
+#if DEBUG
+import SwiftUI
+
+@available(iOS 13, *)
+struct AgeCollectionViewCell_Preview: PreviewProvider {
+    static var previews: some View {
+        Group {
+            AgeCollectionViewCell().showPreview().previewLayout(PreviewLayout.fixed(width: 94, height: 44))
+        }
+    }
+}
+
+#endif

@@ -21,7 +21,6 @@
 		EE1C2DDD28D4C31800C1186D /* TypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C2DDC28D4C31800C1186D /* TypeCollectionViewCell.swift */; };
 		EE1C2DDF28D51E5A00C1186D /* BuscarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C2DDE28D51E5A00C1186D /* BuscarView.swift */; };
 		EED6468B28DA026100581686 /* AgeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED6468A28DA026100581686 /* AgeCollectionViewCell.swift */; };
-		EED6468F28DA233500581686 /* PlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED6468E28DA233500581686 /* PlaceCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +40,6 @@
 		EE1C2DDC28D4C31800C1186D /* TypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE1C2DDE28D51E5A00C1186D /* BuscarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarView.swift; sourceTree = "<group>"; };
 		EED6468A28DA026100581686 /* AgeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeCollectionViewCell.swift; sourceTree = "<group>"; };
-		EED6468E28DA233500581686 /* PlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +103,6 @@
 				EE1C2DDE28D51E5A00C1186D /* BuscarView.swift */,
 				EE1C2DDC28D4C31800C1186D /* TypeCollectionViewCell.swift */,
 				EED6468A28DA026100581686 /* AgeCollectionViewCell.swift */,
-				EED6468E28DA233500581686 /* PlaceCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,7 +184,6 @@
 				936F7DA828CF546B000445E2 /* UIView+Preview.swift in Sources */,
 				93A3158328D0AFC800145AC8 /* ViewController.swift in Sources */,
 				936F7DAA28CF5473000445E2 /* UIViewController+Preview.swift in Sources */,
-				EED6468F28DA233500581686 /* PlaceCollectionViewCell.swift in Sources */,
 				936F7DB128CF6287000445E2 /* SalvosViewController.swift in Sources */,
 				EE1C2DDF28D51E5A00C1186D /* BuscarView.swift in Sources */,
 				936F7DAF28CF627C000445E2 /* ExplorarViewController.swift in Sources */,
