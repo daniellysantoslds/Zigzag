@@ -74,7 +74,7 @@ class SessaoExplorarComponente: UIView {
         layout.itemSize = CGSize(width: 164, height: 204)
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(ComerCollectionViewCell.self, forCellWithReuseIdentifier: ComerCollectionViewCell.identifier)
+        collectionView.register(ExplorarCollectionViewCell.self, forCellWithReuseIdentifier: ExplorarCollectionViewCell.identifier)
         collectionView.showsHorizontalScrollIndicator = false
         //        collectionView.backgroundColor = .red
         return collectionView
@@ -84,9 +84,9 @@ class SessaoExplorarComponente: UIView {
     
     func setupHierarchy() {
         self.addSubview(stackView)
+        tituloLabel.text = self.titulo
         stackView.addSubview(tituloLabel)
         stackView.addSubview(collection)
-
         
     }
     
@@ -95,10 +95,10 @@ class SessaoExplorarComponente: UIView {
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: self.topAnchor),
-            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            stackView.bottomAnchor.constraint(equalTo: self.topAnchor, constant: 300)
+            stackView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            stackView.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            stackView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 300)
             
         ])
         
@@ -117,7 +117,7 @@ class SessaoExplorarComponente: UIView {
             collection.topAnchor.constraint(equalTo: tituloLabel.topAnchor, constant: 40),
             collection.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             collection.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            collection.bottomAnchor.constraint(equalTo: tituloLabel.topAnchor, constant: 260)
+            collection.bottomAnchor.constraint(equalTo: tituloLabel.topAnchor, constant: 240)
             
         ])
         
@@ -138,8 +138,8 @@ extension SessaoExplorarComponente: UICollectionViewDelegate, UICollectionViewDa
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let item:SessaoExplorarModel = self.listaValores[indexPath.count]
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ComerCollectionViewCell.identifier, for: indexPath) as? ComerCollectionViewCell
+        let item:SessaoExplorarModel = self.listaValores[indexPath.item]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExplorarCollectionViewCell.identifier, for: indexPath) as? ExplorarCollectionViewCell
         cell?.configure(imagem: UIImage(named: item.imagem) ?? UIImage(), lugar: item.titulo, idade: item.subTitulo)
         return cell ?? UICollectionViewCell()
     }

@@ -7,15 +7,16 @@
 
 import UIKit
 
-class ComerCollectionViewCell: UICollectionViewCell {
+class ExplorarCollectionViewCell: UICollectionViewCell {
         
         static let identifier = "ComerCell"
         
         let imageView: UIImageView = {
             let imageView = UIImageView()
             imageView.image = UIImage(named: "teste")
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleAspectFill
             imageView.clipsToBounds = true
+            
             return imageView
         }()
         

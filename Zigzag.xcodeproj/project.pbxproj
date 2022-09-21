@@ -20,8 +20,10 @@
 		936F7DAD28CF6239000445E2 /* BuscarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DAC28CF6239000445E2 /* BuscarViewController.swift */; };
 		936F7DAF28CF627C000445E2 /* ExplorarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DAE28CF627C000445E2 /* ExplorarViewController.swift */; };
 		936F7DB128CF6287000445E2 /* SalvosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DB028CF6287000445E2 /* SalvosViewController.swift */; };
-		9383762228DB36FB0030F2F6 /* ComerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9383762128DB36FB0030F2F6 /* ComerCollectionViewCell.swift */; };
+		9383762228DB36FB0030F2F6 /* ExplorarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9383762128DB36FB0030F2F6 /* ExplorarCollectionViewCell.swift */; };
 		9383762528DB49800030F2F6 /* SessaoExplorarComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9383762428DB49800030F2F6 /* SessaoExplorarComponente.swift */; };
+		9383762828DB668D0030F2F6 /* hosp-recifepraiahotel.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9383762628DB668D0030F2F6 /* hosp-recifepraiahotel.jpeg */; };
+		9383762928DB668D0030F2F6 /* hosp-radiddon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9383762728DB668D0030F2F6 /* hosp-radiddon.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +42,10 @@
 		936F7DAC28CF6239000445E2 /* BuscarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuscarViewController.swift; sourceTree = "<group>"; };
 		936F7DAE28CF627C000445E2 /* ExplorarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorarViewController.swift; sourceTree = "<group>"; };
 		936F7DB028CF6287000445E2 /* SalvosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalvosViewController.swift; sourceTree = "<group>"; };
-		9383762128DB36FB0030F2F6 /* ComerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComerCollectionViewCell.swift; sourceTree = "<group>"; };
+		9383762128DB36FB0030F2F6 /* ExplorarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorarCollectionViewCell.swift; sourceTree = "<group>"; };
 		9383762428DB49800030F2F6 /* SessaoExplorarComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessaoExplorarComponente.swift; sourceTree = "<group>"; };
+		9383762628DB668D0030F2F6 /* hosp-recifepraiahotel.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hosp-recifepraiahotel.jpeg"; sourceTree = "<group>"; };
+		9383762728DB668D0030F2F6 /* hosp-radiddon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hosp-radiddon.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 				9356EEC228DA9B5C00032BF6 /* Views */,
 				936F7DAB28CF61B0000445E2 /* Controllers */,
 				932CB73628CB856A00E2D8F8 /* Assets.xcassets */,
+				9383762728DB668D0030F2F6 /* hosp-radiddon.jpeg */,
+				9383762628DB668D0030F2F6 /* hosp-recifepraiahotel.jpeg */,
 				9356EEC328DA9EB700032BF6 /* Imagem de fundo.png */,
 				932CB73828CB856A00E2D8F8 /* LaunchScreen.storyboard */,
 				932CB73B28CB856A00E2D8F8 /* Info.plist */,
@@ -113,7 +119,7 @@
 		9383762028DB36810030F2F6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				9383762128DB36FB0030F2F6 /* ComerCollectionViewCell.swift */,
+				9383762128DB36FB0030F2F6 /* ExplorarCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -184,9 +190,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9383762828DB668D0030F2F6 /* hosp-recifepraiahotel.jpeg in Resources */,
 				932CB73A28CB856A00E2D8F8 /* LaunchScreen.storyboard in Resources */,
 				932CB73728CB856A00E2D8F8 /* Assets.xcassets in Resources */,
 				9356EEC428DA9EB700032BF6 /* Imagem de fundo.png in Resources */,
+				9383762928DB668D0030F2F6 /* hosp-radiddon.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +216,7 @@
 				932CB72E28CB856700E2D8F8 /* AppDelegate.swift in Sources */,
 				933AE90D28CFA0360082AB2F /* OnboardingViewController.swift in Sources */,
 				932CB73028CB856700E2D8F8 /* SceneDelegate.swift in Sources */,
-				9383762228DB36FB0030F2F6 /* ComerCollectionViewCell.swift in Sources */,
+				9383762228DB36FB0030F2F6 /* ExplorarCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,8 @@ class MainTabBarViewController: UITabBarController{
         vc3.title = "Salvos"
         
         
-        tabBar.tintColor = .label
+        tabBar.tintColor = UIColor(named: "Green30")
+        tabBar.backgroundColor = .systemBackground
         
         setViewControllers([vc1, vc2, vc3], animated: true)
         
