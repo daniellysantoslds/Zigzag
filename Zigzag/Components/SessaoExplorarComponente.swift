@@ -45,6 +45,12 @@ class SessaoExplorarComponente: UIView {
     
     let stackView: UIStackView = UIStackView()
     
+    let stackViewSessaoLabel: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        return stack
+    }()
+    
     
     let tituloLabel: UILabel = {
         let labelTituloView = UILabel()
@@ -59,12 +65,13 @@ class SessaoExplorarComponente: UIView {
     let verTodosButton: UIButton = {
         let verTodosButtonView = UIButton(frame: .zero)
         verTodosButtonView.translatesAutoresizingMaskIntoConstraints = false
-        verTodosButtonView.titleLabel?.tintColor = UIColor(named: "Green30")
+        
+        verTodosButtonView.setTitleColor(UIColor(named: "Green30"), for: .normal)
         verTodosButtonView.setTitle("Ver Todos", for: .normal)
         verTodosButtonView.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         verTodosButtonView.clipsToBounds = true
         verTodosButtonView.layer.cornerRadius = 12
-        verTodosButtonView.titleLabel?.textAlignment = .center
+        verTodosButtonView.titleLabel?.textAlignment = .left
         return verTodosButtonView
         
     }()
@@ -85,8 +92,12 @@ class SessaoExplorarComponente: UIView {
     func setupHierarchy() {
         self.addSubview(stackView)
         tituloLabel.text = self.titulo
-        stackView.addSubview(tituloLabel)
+        stackViewSessaoLabel.addSubview(tituloLabel)
+        stackViewSessaoLabel.addSubview(verTodosButton)
+        stackView.addSubview(stackViewSessaoLabel)
+        
         stackView.addSubview(collection)
+        
         
     }
     
@@ -103,12 +114,31 @@ class SessaoExplorarComponente: UIView {
         ])
         
         
+        stackViewSessaoLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            stackViewSessaoLabel.topAnchor.constraint(equalTo: stackView.topAnchor),
+            stackViewSessaoLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            stackViewSessaoLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            stackViewSessaoLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: 40),
+            
+        ])
+        
         tituloLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tituloLabel.topAnchor.constraint(equalTo: stackView.topAnchor),
-            tituloLabel.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-            tituloLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-            tituloLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: 40),
+            tituloLabel.topAnchor.constraint(equalTo: stackViewSessaoLabel.topAnchor),
+            tituloLabel.trailingAnchor.constraint(equalTo: stackViewSessaoLabel.trailingAnchor),
+            tituloLabel.leadingAnchor.constraint(equalTo: stackViewSessaoLabel.leadingAnchor),
+            tituloLabel.bottomAnchor.constraint(equalTo: stackViewSessaoLabel.topAnchor, constant: 40),
+            
+            
+        ])
+        
+        verTodosButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            verTodosButton.topAnchor.constraint(equalTo: stackViewSessaoLabel.topAnchor),
+            verTodosButton.trailingAnchor.constraint(equalTo: stackViewSessaoLabel.trailingAnchor, constant: -30),
+            verTodosButton.leadingAnchor.constraint(equalTo: stackViewSessaoLabel.leadingAnchor),
+            verTodosButton.bottomAnchor.constraint(equalTo: stackViewSessaoLabel.topAnchor, constant: 40),
             
         ])
         
