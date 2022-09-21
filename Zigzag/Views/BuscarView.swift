@@ -4,6 +4,7 @@ class BuscarView: UIView {
     
     /* MARK: - Atributos */
     
+    
     public let typeCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -77,18 +78,18 @@ class BuscarView: UIView {
     }()
     
     private let goButton: UIButton = {
-      let button = UIButton(configuration: .filled())
-      button.setTitle("Filtrar", for: .normal)
-      button.setTitleColor(.white, for: .normal)
-      button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
-      button.backgroundColor = .green
-      button.layer.cornerRadius = 12
-      button.layer.borderWidth = 2
-      button.layer.borderColor = UIColor.white.cgColor
-      button.addTarget(self, action: #selector(cancelActionButton), for: .touchUpInside)
-      button.translatesAutoresizingMaskIntoConstraints = false
+        let button = UIButton(configuration: .filled())
+        button.setTitle("Filtrar", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
+        button.backgroundColor = UIColor(named: "Green30")
+        button.layer.cornerRadius = 12
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.white.cgColor
+        button.addTarget(self, action: #selector(cancelActionButton), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
         
-      return button
+        return button
     }()
     
     
@@ -102,7 +103,7 @@ class BuscarView: UIView {
     private var dynamicConstraints: [NSLayoutConstraint] = []
     
     /// Configurações do layout da collection
- 
+    
     
     
     
@@ -113,7 +114,7 @@ class BuscarView: UIView {
         self.backgroundColor = .systemBackground //AQUI A COR DO FUNDO
         self.registerCell()
         self.setupViews()
-
+        
     }
     required init?(coder: NSCoder) {fatalError("init(coder:) has not been implemented")}
     
@@ -208,7 +209,7 @@ class BuscarView: UIView {
         NSLayoutConstraint.deactivate(self.dynamicConstraints)
         
         self.dynamicConstraints = [
-            self.title1.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 44),
+            self.title1.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             self.title1.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
             self.title1.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -16),
             self.title1.heightAnchor.constraint(equalToConstant: 24),
@@ -251,7 +252,7 @@ class BuscarView: UIView {
     }
     
     @objc func cancelActionButton() {
-      //your code here when click
+        //your code here when click
     }
 }
 
