@@ -41,8 +41,8 @@ class OnboardingView: UIView {
 
     private lazy var labelDescricao: UILabel = {
         let labelDescricaoView = UILabel()
-        labelDescricaoView.text = "O zigzag é um app onde você encontra locais ideais pra curtir com as crianças."
-        labelDescricaoView.numberOfLines = 3
+        labelDescricaoView.text = "Um app onde você encontra locais ideais para curtir com as crianças."
+        labelDescricaoView.numberOfLines = 2
         labelDescricaoView.textColor = .white
         labelDescricaoView.font = UIFont.boldSystemFont(ofSize: 17)
         labelDescricaoView.translatesAutoresizingMaskIntoConstraints = false
@@ -52,13 +52,14 @@ class OnboardingView: UIView {
     
     private lazy var comecarButton: UIButton = {
         let comecarButtonView = UIButton(frame: .zero)
-        comecarButtonView.backgroundColor = UIColor(named: "Green-30")
+        comecarButtonView.translatesAutoresizingMaskIntoConstraints = false
+        comecarButtonView.backgroundColor = UIColor(named: "Green30")
         comecarButtonView.setTitle("Começar", for: .normal)
         comecarButtonView.titleLabel?.font = UIFont.systemFont(ofSize: 17)
         comecarButtonView.clipsToBounds = true
         comecarButtonView.layer.cornerRadius = 12
         comecarButtonView.titleLabel?.textAlignment = .center
-        comecarButtonView.translatesAutoresizingMaskIntoConstraints = false
+        comecarButtonView.addTarget(self, action: #selector(onStart), for: .touchDown)
         return comecarButtonView
         
     }()
@@ -81,6 +82,21 @@ class OnboardingView: UIView {
             self.labelTitulo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             self.labelTitulo.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             self.labelTitulo.widthAnchor.constraint(equalToConstant: 283),
+            
+            self.labelDescricao.topAnchor.constraint(equalTo: self.topAnchor, constant: -600),
+            self.labelDescricao.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
+            self.labelDescricao.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30),
+            self.labelDescricao.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            
+            self.comecarButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -50),
+            self.comecarButton.widthAnchor.constraint(equalToConstant: 40),
+            self.comecarButton.heightAnchor.constraint(equalToConstant: 40),
+            self.comecarButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -70),
+            self.comecarButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 70),
+           
+         
+            
         
         
         ])
@@ -117,6 +133,10 @@ class OnboardingView: UIView {
 //        ])
             
            
+    }
+    
+    @objc private func onStart() {
+        controller.goToMainTab()
     }
     
     

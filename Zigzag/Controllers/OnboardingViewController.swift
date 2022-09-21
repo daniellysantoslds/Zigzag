@@ -17,8 +17,16 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-       // view.backgroundColor = .cyan
+        
+        // view.backgroundColor = .cyan
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    func goToMainTab() {
+        self.navigationController?.pushViewController(MainTabBarViewController(), animated: true)
     }
     
     
@@ -34,9 +42,9 @@ import SwiftUI
 struct OnboardingViewController_Preview: PreviewProvider {
     static var previews: some View {
         Group {
-           OnboardingViewController().showPreview().previewDevice("iPhone 13")
-        OnboardingViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
-        
+            OnboardingViewController().showPreview().previewDevice("iPhone 13")
+            OnboardingViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
+            
         }
     }
 }
