@@ -76,10 +76,11 @@ class OnboardingView: UIView {
             self.backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor),
         
-            self.labelTitulo.topAnchor.constraint(equalTo: self.topAnchor, constant: -200),
-            self.labelTitulo.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -46),
-            self.labelTitulo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 90),
+            self.labelTitulo.topAnchor.constraint(equalTo: self.topAnchor, constant: -717),
+            self.labelTitulo.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 100),
+            self.labelTitulo.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 100),
             self.labelTitulo.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            self.labelTitulo.widthAnchor.constraint(equalToConstant: 283),
         
         
         ])
