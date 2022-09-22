@@ -129,6 +129,11 @@ class ResultadoCollectionViewCell: UICollectionViewCell {
         
         ])
     }
+    
+    public func setup(image: UIImage, texto: String){
+        imageItem.image = image
+        tituloItem.text = texto
+    }
 
 }
 

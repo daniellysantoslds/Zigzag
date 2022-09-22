@@ -22,6 +22,9 @@ class ResultadoBuscarViewControler: UIViewController, UICollectionViewDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+     
+
+        
         
         view.backgroundColor = .systemCyan
         
@@ -51,6 +54,12 @@ class ResultadoBuscarViewControler: UIViewController, UICollectionViewDelegate, 
     }
     
     
+    func openDetails(index: Int) {
+        let controller = DetailsViewController()
+        controller.modalPresentationStyle = .fullScreen
+        self.present(controller, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
@@ -59,12 +68,17 @@ class ResultadoBuscarViewControler: UIViewController, UICollectionViewDelegate, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultadoCollectionViewCell.identifier, for: indexPath)
         as! ResultadoCollectionViewCell
         let image = imagensResults[indexPath.item] ?? UIImage()
-        //cell.setup(image: image, texto: textoResults[indexPath.item])
+        cell.setup(image: image, texto: textoResults[indexPath.item])
         return cell
    
         
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        openDetails(index: indexPath.row)
+        
+       
+    }
     
 }
