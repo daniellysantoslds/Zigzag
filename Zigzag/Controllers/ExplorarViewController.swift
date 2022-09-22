@@ -68,14 +68,15 @@ class ExplorarViewController: UIViewController {
             stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 16),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, constant: 375)
+            stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, constant: 200)
             
         ])
         
         
         sessaoComer!.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            sessaoComer!.topAnchor.constraint(equalTo: stackView.topAnchor),
+            sessaoComer!.topAnchor.constraint(equalTo: stackView.topAnchor
+                                             ),
             sessaoComer!.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
             sessaoComer!.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
             sessaoComer!.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: 230)

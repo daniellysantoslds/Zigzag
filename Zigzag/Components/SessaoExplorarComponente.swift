@@ -175,6 +175,7 @@ extension SessaoExplorarComponente: UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExplorarCollectionViewCell.identifier, for: indexPath) as? ExplorarCollectionViewCell
         cell?.configure(imagem: UIImage(named: item.imagem) ?? UIImage(), lugar: item.titulo, idade: item.subTitulo)
         cell?.backgroundColor = UIColor(named: "white")
+        cell?.layer.cornerRadius = 8
         return cell ?? UICollectionViewCell()
     }
     

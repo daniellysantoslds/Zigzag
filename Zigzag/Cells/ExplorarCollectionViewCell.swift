@@ -11,11 +11,25 @@ class ExplorarCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "ComerCell"
     
+    
+    private let borda: UIView = {
+        let borda = UIView()
+        borda.translatesAutoresizingMaskIntoConstraints = false
+        borda.layer.cornerRadius = 8
+        borda.layer.borderWidth = 1
+        borda.layer.borderColor = UIColor.white.cgColor
+
+        return borda
+    }()
+    
+    
+    
     let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "teste")
         imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true        
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 8
         return imageView
     }()
     
@@ -25,7 +39,8 @@ class ExplorarCollectionViewCell: UICollectionViewCell {
         label.text = "Pessoas"
         label.textAlignment = .left
         label.clipsToBounds = true
-        label.font = UIFont.boldSystemFont(ofSize: 15)
+        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.textColor = UIColor(named: "Gray30")
         return label
     }()
     
@@ -35,7 +50,10 @@ class ExplorarCollectionViewCell: UICollectionViewCell {
         label.text = "2-anos"
         label.textAlignment = .left
         label.clipsToBounds = true
-        label.font = UIFont.boldSystemFont(ofSize: 12)
+        label.font = .systemFont(ofSize: 12, weight: .medium)
+        label.textColor = UIColor(named: "Green30")
+
+
         return label
     }()
     
@@ -66,6 +84,7 @@ class ExplorarCollectionViewCell: UICollectionViewCell {
     func setupHierarchy() {
         
         contentView.addSubview(stackView)
+        stackView.addArrangedSubview(borda)
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(labeldois)
@@ -74,6 +93,16 @@ class ExplorarCollectionViewCell: UICollectionViewCell {
    
     
     func setupConstraints() {
+        
+        borda.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            borda.topAnchor.constraint(equalTo: stackView.topAnchor),
+            borda.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+            borda.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+            borda.bottomAnchor.constraint(equalTo: stackView.bottomAnchor),
+        ])
+        
+ 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
