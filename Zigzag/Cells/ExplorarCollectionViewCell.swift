@@ -15,8 +15,7 @@ class ExplorarCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "teste")
         imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        
+        imageView.clipsToBounds = true        
         return imageView
     }()
     

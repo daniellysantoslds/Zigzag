@@ -85,7 +85,6 @@ class SessaoExplorarComponente: UIView {
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(ExplorarCollectionViewCell.self, forCellWithReuseIdentifier: ExplorarCollectionViewCell.identifier)
-//        collectionView.layer.cornerRadius = 8
         collectionView.showsHorizontalScrollIndicator = false
         //        collectionView.backgroundColor = .red
         return collectionView
@@ -175,6 +174,7 @@ extension SessaoExplorarComponente: UICollectionViewDelegate, UICollectionViewDa
         let item:SessaoExplorarModel = self.listaValores[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ExplorarCollectionViewCell.identifier, for: indexPath) as? ExplorarCollectionViewCell
         cell?.configure(imagem: UIImage(named: item.imagem) ?? UIImage(), lugar: item.titulo, idade: item.subTitulo)
+        cell?.backgroundColor = UIColor(named: "white")
         return cell ?? UICollectionViewCell()
     }
     
