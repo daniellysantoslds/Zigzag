@@ -12,7 +12,6 @@ class MainTabBarViewController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .cyan
         
         let vc1 = UINavigationController(rootViewController: BuscarViewController())
         let vc2 = UINavigationController(rootViewController: ExplorarViewController())
@@ -21,17 +20,19 @@ class MainTabBarViewController: UITabBarController{
         vc1.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         vc2.tabBarItem.image = UIImage(systemName: "safari")
         vc3.tabBarItem.image = UIImage(systemName: "heart")
-
+        
         vc1.title = "Buscar"
         vc2.title = "Explorar"
         vc3.title = "Salvos"
         
         
-        tabBar.tintColor = .label
+        tabBar.tintColor = UIColor(named: "Green30")
+        tabBar.backgroundColor = .systemBackground
         
         setViewControllers([vc1, vc2, vc3], animated: true)
         
     }
+    
     
     
 }
@@ -46,6 +47,7 @@ struct View_Preview: PreviewProvider {
         Group {
             MainTabBarViewController().showPreview().previewDevice("iPhone 13")
             MainTabBarViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
+            
         }
     }
 }
