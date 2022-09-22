@@ -8,7 +8,7 @@
 import UIKit
 
 // acrescentei UICollectionViewDelegate e UICollectionViewDataSource
-class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
+class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, BuscarViewDelegate  {
     
     
     public let myView = BuscarView()
@@ -28,14 +28,11 @@ class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     private var myConstraints: [NSLayoutConstraint] = []
     
-    override func loadView() {
-        super.loadView()
-        self.view = myView // A view do viewcontroller é essa
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view = myView // A view do viewcontroller é essa
+        self.myView.delegate = self
     
        }
     
@@ -58,7 +55,24 @@ class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollec
         super.viewDidLayoutSubviews()
     }
     
-
+    func trocaTela() {
+        let indicesType = myView.typeCollectionView.indexPathsForSelectedItems
+        let indicesAge = myView.ageCollectionView.indexPathsForSelectedItems
+        let indicesPlace = myView.placeCollectionView.indexPathsForSelectedItems
+        
+        //INICIALIZAR NOVA TELA
+        let nextVC = ResultadoBuscarViewControler()
+        
+        //PASSAR OS VALORES DO FILTRO PARA A NOVA TELA
+        //nextVC.filtroDoCampoType = textoType[indicesType?[0].item ?? 0]
+        //nextVC.filtroDoCampoAge = textoType[indicesAge?[0].item ?? 0]
+        //nextVC.filtroDoCampoPlace = textoType[indicesPlace?[0].item ?? 0]
+        
+        //CHAMAR A PROXIMA TELA
+        navigationController?.pushViewController(nextVC, animated: true)
+        
+        print(textoType[indicesType?[0].item ?? 0])
+    }
     
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -90,8 +104,18 @@ class BuscarViewController: UIViewController, UICollectionViewDelegate, UICollec
 
     
     }
+  
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderWidth = 2.0
+        cell?.layer.borderColor = UIColor.systemGreen.cgColor
+        cell?.layer.cornerRadius = 8 
+    }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.layer.borderWidth = 0
+    }
 }
     
 

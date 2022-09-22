@@ -4,6 +4,7 @@ class BuscarView: UIView {
     
     /* MARK: - Atributos */
     
+    weak var delegate: BuscarViewDelegate?
     
     public let typeCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -12,6 +13,9 @@ class BuscarView: UIView {
         layout.minimumLineSpacing = 16
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.allowsSelection = true
+        collection.showsHorizontalScrollIndicator = false
+
         
         return collection
     }()
@@ -23,6 +27,9 @@ class BuscarView: UIView {
         layout.minimumLineSpacing = 8
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.allowsSelection = true
+        collection.showsHorizontalScrollIndicator = false
+
         
         return collection
     }()
@@ -34,6 +41,10 @@ class BuscarView: UIView {
         layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.allowsSelection = true
+        collection.showsHorizontalScrollIndicator = false
+
+
         
         return collection
     }()
@@ -84,10 +95,11 @@ class BuscarView: UIView {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
         button.backgroundColor = UIColor(named: "Green30")
         button.layer.cornerRadius = 12
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.white.cgColor
+       // button.layer.borderWidth = 2
+        //button.layer.borderColor = UIColor.white.cgColor
         button.addTarget(self, action: #selector(cancelActionButton), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .systemGreen
         
         return button
     }()
@@ -252,6 +264,10 @@ class BuscarView: UIView {
     }
     
     @objc func cancelActionButton() {
+        print("poii")
+        delegate?.trocaTela()
+        
+        print()
         //your code here when click
     }
 }

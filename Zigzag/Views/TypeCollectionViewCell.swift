@@ -16,6 +16,7 @@ class TypeCollectionViewCell: UICollectionViewCell {
         borda.layer.cornerRadius = 8
         borda.layer.borderWidth = 1
         borda.layer.borderColor = UIColor.lightGray.cgColor
+
         
         return borda
     }()
@@ -26,7 +27,9 @@ class TypeCollectionViewCell: UICollectionViewCell {
         imageview.translatesAutoresizingMaskIntoConstraints = false
         imageview.contentMode = .scaleAspectFill
         imageview.clipsToBounds = true
+        
         return imageview
+        
     }()
     
     private let titulo1: UILabel = {
@@ -39,6 +42,7 @@ class TypeCollectionViewCell: UICollectionViewCell {
         label.clipsToBounds = true
         label.textColor = UIColor(named: "Gray40")
         label.font = UIFont.boldSystemFont(ofSize: 16)
+        
         return label
     }()
     
