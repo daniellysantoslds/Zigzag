@@ -12,7 +12,7 @@ class MainTabBarViewController: UITabBarController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-                
+        
         let vc1 = UINavigationController(rootViewController: BuscarViewController())
         let vc2 = UINavigationController(rootViewController: ExplorarViewController())
         let vc3 = UINavigationController(rootViewController: SalvosViewController())
@@ -20,7 +20,7 @@ class MainTabBarViewController: UITabBarController{
         vc1.tabBarItem.image = UIImage(systemName: "magnifyingglass")
         vc2.tabBarItem.image = UIImage(systemName: "safari")
         vc3.tabBarItem.image = UIImage(systemName: "heart")
-
+        
         vc1.title = "Buscar"
         vc2.title = "Explorar"
         vc3.title = "Salvos"
@@ -33,7 +33,7 @@ class MainTabBarViewController: UITabBarController{
         
     }
     
-
+    
     
 }
 
@@ -45,9 +45,9 @@ import SwiftUI
 struct View_Preview: PreviewProvider {
     static var previews: some View {
         Group {
-           MainTabBarViewController().showPreview().previewDevice("iPhone 13")
-           MainTabBarViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
-        
+            MainTabBarViewController().showPreview().previewDevice("iPhone 13")
+            MainTabBarViewController().showPreview().previewDevice("iPhone 13").previewInterfaceOrientation(.landscapeLeft)
+            
         }
     }
 }

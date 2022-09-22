@@ -13,7 +13,6 @@
 		932CB73728CB856A00E2D8F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 932CB73628CB856A00E2D8F8 /* Assets.xcassets */; };
 		932CB73A28CB856A00E2D8F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 932CB73828CB856A00E2D8F8 /* LaunchScreen.storyboard */; };
 		933AE90D28CFA0360082AB2F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933AE90C28CFA0360082AB2F /* OnboardingViewController.swift */; };
-		9356EEC428DA9EB700032BF6 /* Imagem de fundo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9356EEC328DA9EB700032BF6 /* Imagem de fundo.png */; };
 		936C042228D8968D004851B8 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936C042128D8968D004851B8 /* OnboardingView.swift */; };
 		936F7DA828CF546B000445E2 /* UIView+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DA728CF546B000445E2 /* UIView+Preview.swift */; };
 		936F7DAA28CF5473000445E2 /* UIViewController+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DA928CF5473000445E2 /* UIViewController+Preview.swift */; };
@@ -22,8 +21,6 @@
 		936F7DB128CF6287000445E2 /* SalvosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F7DB028CF6287000445E2 /* SalvosViewController.swift */; };
 		9383762228DB36FB0030F2F6 /* ExplorarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9383762128DB36FB0030F2F6 /* ExplorarCollectionViewCell.swift */; };
 		9383762528DB49800030F2F6 /* SessaoExplorarComponente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9383762428DB49800030F2F6 /* SessaoExplorarComponente.swift */; };
-		9383762828DB668D0030F2F6 /* hosp-recifepraiahotel.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9383762628DB668D0030F2F6 /* hosp-recifepraiahotel.jpeg */; };
-		9383762928DB668D0030F2F6 /* hosp-radiddon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9383762728DB668D0030F2F6 /* hosp-radiddon.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +32,6 @@
 		932CB73928CB856A00E2D8F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		932CB73B28CB856A00E2D8F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		933AE90C28CFA0360082AB2F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		9356EEC328DA9EB700032BF6 /* Imagem de fundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Imagem de fundo.png"; sourceTree = "<group>"; };
 		936C042128D8968D004851B8 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		936F7DA728CF546B000445E2 /* UIView+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Preview.swift"; sourceTree = "<group>"; };
 		936F7DA928CF5473000445E2 /* UIViewController+Preview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Preview.swift"; sourceTree = "<group>"; };
@@ -44,8 +40,6 @@
 		936F7DB028CF6287000445E2 /* SalvosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalvosViewController.swift; sourceTree = "<group>"; };
 		9383762128DB36FB0030F2F6 /* ExplorarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorarCollectionViewCell.swift; sourceTree = "<group>"; };
 		9383762428DB49800030F2F6 /* SessaoExplorarComponente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessaoExplorarComponente.swift; sourceTree = "<group>"; };
-		9383762628DB668D0030F2F6 /* hosp-recifepraiahotel.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hosp-recifepraiahotel.jpeg"; sourceTree = "<group>"; };
-		9383762728DB668D0030F2F6 /* hosp-radiddon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "hosp-radiddon.jpeg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +79,6 @@
 				9356EEC228DA9B5C00032BF6 /* Views */,
 				936F7DAB28CF61B0000445E2 /* Controllers */,
 				932CB73628CB856A00E2D8F8 /* Assets.xcassets */,
-				9383762728DB668D0030F2F6 /* hosp-radiddon.jpeg */,
-				9383762628DB668D0030F2F6 /* hosp-recifepraiahotel.jpeg */,
-				9356EEC328DA9EB700032BF6 /* Imagem de fundo.png */,
 				932CB73828CB856A00E2D8F8 /* LaunchScreen.storyboard */,
 				932CB73B28CB856A00E2D8F8 /* Info.plist */,
 				936F7DA728CF546B000445E2 /* UIView+Preview.swift */,
@@ -190,11 +181,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9383762828DB668D0030F2F6 /* hosp-recifepraiahotel.jpeg in Resources */,
 				932CB73A28CB856A00E2D8F8 /* LaunchScreen.storyboard in Resources */,
 				932CB73728CB856A00E2D8F8 /* Assets.xcassets in Resources */,
-				9356EEC428DA9EB700032BF6 /* Imagem de fundo.png in Resources */,
-				9383762928DB668D0030F2F6 /* hosp-radiddon.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

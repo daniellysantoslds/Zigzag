@@ -62,16 +62,19 @@ class SessaoExplorarComponente: UIView {
         
     }()
     
+    
+    
     let verTodosButton: UIButton = {
         let verTodosButtonView = UIButton(frame: .zero)
         verTodosButtonView.translatesAutoresizingMaskIntoConstraints = false
         
         verTodosButtonView.setTitleColor(UIColor(named: "Green30"), for: .normal)
         verTodosButtonView.setTitle("Ver Todos", for: .normal)
-        verTodosButtonView.titleLabel?.font = UIFont.systemFont(ofSize: 17)
+        //        verTodosButtonView.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         verTodosButtonView.clipsToBounds = true
+        verTodosButtonView.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         verTodosButtonView.layer.cornerRadius = 12
-        verTodosButtonView.titleLabel?.textAlignment = .left
+        verTodosButtonView.titleLabel?.textAlignment = .right
         return verTodosButtonView
         
     }()
@@ -82,6 +85,7 @@ class SessaoExplorarComponente: UIView {
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(ExplorarCollectionViewCell.self, forCellWithReuseIdentifier: ExplorarCollectionViewCell.identifier)
+//        collectionView.layer.cornerRadius = 8
         collectionView.showsHorizontalScrollIndicator = false
         //        collectionView.backgroundColor = .red
         return collectionView
@@ -136,8 +140,8 @@ class SessaoExplorarComponente: UIView {
         verTodosButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             verTodosButton.topAnchor.constraint(equalTo: stackViewSessaoLabel.topAnchor),
-            verTodosButton.trailingAnchor.constraint(equalTo: stackViewSessaoLabel.trailingAnchor, constant: -30),
-            verTodosButton.leadingAnchor.constraint(equalTo: stackViewSessaoLabel.leadingAnchor),
+            verTodosButton.trailingAnchor.constraint(equalTo: stackViewSessaoLabel.trailingAnchor, constant: -16),
+            verTodosButton.leadingAnchor.constraint(equalTo: stackViewSessaoLabel.leadingAnchor, constant: 260),
             verTodosButton.bottomAnchor.constraint(equalTo: stackViewSessaoLabel.topAnchor, constant: 40),
             
         ])
@@ -175,6 +179,4 @@ extension SessaoExplorarComponente: UICollectionViewDelegate, UICollectionViewDa
     }
     
 }
-
-
 
