@@ -90,14 +90,12 @@
 		932CB72C28CB856700E2D8F8 /* Zigzag */ = {
 			isa = PBXGroup;
 			children = (
-				9383762328DB492B0030F2F6 /* Components */,
-				9383762028DB36810030F2F6 /* Cells */,
 				932CB72D28CB856700E2D8F8 /* AppDelegate.swift */,
 				932CB72F28CB856700E2D8F8 /* SceneDelegate.swift */,
-				9356EEC228DA9B5C00032BF6 /* Views */,
+				9383762328DB492B0030F2F6 /* Components */,
 				936F7DAB28CF61B0000445E2 /* Controllers */,
 				EE1C2DD428D1F90400C1186D /* Views */,
-				EE1C2DD928D25E8300C1186D /* Models */,
+				9383762028DB36810030F2F6 /* Cells */,
 				932CB73628CB856A00E2D8F8 /* Assets.xcassets */,
 				932CB73828CB856A00E2D8F8 /* LaunchScreen.storyboard */,
 				932CB73B28CB856A00E2D8F8 /* Info.plist */,
@@ -107,18 +105,9 @@
 			path = Zigzag;
 			sourceTree = "<group>";
 		};
-		9356EEC228DA9B5C00032BF6 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				936C042128D8968D004851B8 /* OnboardingView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		936F7DAB28CF61B0000445E2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				93A3158228D0AFC800145AC8 /* ViewController.swift */,
 				932CB73128CB856700E2D8F8 /* MainTabBarViewController.swift */,
 				933AE90C28CFA0360082AB2F /* OnboardingViewController.swift */,
 				936F7DAC28CF6239000445E2 /* BuscarViewController.swift */,
@@ -130,24 +119,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		EE1C2DD428D1F90400C1186D /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				EE1C2DDE28D51E5A00C1186D /* BuscarView.swift */,
-				EE76C55A28DCABCD00C7D700 /* DetailsView.swift */,
-				EE1E81B228DB603200390E81 /* BuscarViewDelegate.swift */,
-				EE76C55C28DD196D00C7D700 /* DetailsViewDelegate.swift */,
-				EE1C2DDC28D4C31800C1186D /* TypeCollectionViewCell.swift */,
-				EED6468A28DA026100581686 /* AgeCollectionViewCell.swift */,
-				EE1E81B828DBEE2200390E81 /* ResultadoCollectionViewCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		9383762028DB36810030F2F6 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				9383762128DB36FB0030F2F6 /* ExplorarCollectionViewCell.swift */,
+				EE1C2DDC28D4C31800C1186D /* TypeCollectionViewCell.swift */,
+				EED6468A28DA026100581686 /* AgeCollectionViewCell.swift */,
+				EE1E81B828DBEE2200390E81 /* ResultadoCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -158,6 +136,18 @@
 				9383762428DB49800030F2F6 /* SessaoExplorarComponente.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		EE1C2DD428D1F90400C1186D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				936C042128D8968D004851B8 /* OnboardingView.swift */,
+				EE1C2DDE28D51E5A00C1186D /* BuscarView.swift */,
+				EE76C55A28DCABCD00C7D700 /* DetailsView.swift */,
+				EE1E81B228DB603200390E81 /* BuscarViewDelegate.swift */,
+				EE76C55C28DD196D00C7D700 /* DetailsViewDelegate.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,7 +230,6 @@
 				9383762528DB49800030F2F6 /* SessaoExplorarComponente.swift in Sources */,
 				936F7DAA28CF5473000445E2 /* UIViewController+Preview.swift in Sources */,
 				EE1E81B928DBEE2200390E81 /* ResultadoCollectionViewCell.swift in Sources */,
-				EE1C2DD828D25E6F00C1186D /* Places.swift in Sources */,
 				936F7DB128CF6287000445E2 /* SalvosViewController.swift in Sources */,
 				EE76C55728DBF8E700C7D700 /* ResultadoViewController.swift in Sources */,
 				EE1E81B328DB603200390E81 /* BuscarViewDelegate.swift in Sources */,
