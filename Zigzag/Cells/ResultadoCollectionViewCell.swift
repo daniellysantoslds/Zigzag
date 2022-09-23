@@ -57,7 +57,7 @@ class ResultadoCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 2
         label.textAlignment = .center
         label.clipsToBounds = true
-        label.textColor = UIColor(named: "Green 20")
+        label.textColor = UIColor(named: "Green30")
         label.font = UIFont.systemFont(ofSize: 15)
        
         
